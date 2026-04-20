@@ -27,5 +27,12 @@ class HashMap:
                 del bucket[i]
                 return True
         return False
+    def get_all(self):
+        """获取所有数据"""
+        result = []
+        for bucket in self.buckets:
+            for k, v in bucket:
+                result.append(v)
+        return result
     def is_existent(self,key):
         return self.get(key) is not None
